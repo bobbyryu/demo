@@ -90,7 +90,7 @@ resource "aws_autoscaling_group" "my_back_end" {
   }
  tag {
     key                 = "Name"
-    value               = "My FrontEnd ASG"
+    value               = "My BackEnd ASG"
     propagate_at_launch = true  
   }
 }
