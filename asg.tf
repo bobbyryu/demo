@@ -45,7 +45,7 @@ resource "aws_launch_configuration" "my_launch_config" {
   }
 }
 
-# Create My FrontEnd ASG
+# Create My FrontEnd ASG # desired number of instances is 6
 
 resource "aws_autoscaling_group" "my_front_end" {
   name                 = "My FrontEnd ASG"
@@ -70,7 +70,7 @@ resource "aws_autoscaling_group" "my_front_end" {
   }
 }
 
-# Create My Backend ASG
+# Create My Backend ASG # desired number of instances is 5
 
 resource "aws_autoscaling_group" "my_back_end" {
   name                 = "My BackEnd ASG"
