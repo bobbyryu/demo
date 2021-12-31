@@ -39,6 +39,7 @@ resource "aws_db_subnet_group" "my-db-subnet" {
 }
 
 # Create RDS Database Instance 
+# note:  DB Instance class db.t2.micro does not support encryption at rest
 
 resource "aws_db_instance" "my-db" {
   allocated_storage       = "10"
