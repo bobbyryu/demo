@@ -1,6 +1,6 @@
 #S3 bucket
 resource "aws_s3_bucket" "b" {
-    bucket = "cloud-avengers-bucket"
+    bucket = var.bucket_name
     acl = "private"
 
     tags = {

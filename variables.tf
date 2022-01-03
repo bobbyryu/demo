@@ -25,5 +25,9 @@ variable "image_id"{
 }
 
 variable "instance_type"{
+
+}
+
+variable "bucket_name" {
     
 }

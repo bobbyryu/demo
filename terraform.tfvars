@@ -19,3 +19,4 @@ db_port           = 3306
 
 image_id             = "ami-03af6a70ccd8cb578"
 instance_type        = "t2.micro"
+bucket_name          = "cloud-avengers-bucket"
