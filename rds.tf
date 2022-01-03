@@ -47,10 +47,10 @@ resource "aws_db_instance" "my-db" {
   engine                  = "mysql"
   engine_version          = "5.7"
   multi_az                = "true"
-  instance_class          = "db.t2.micro"
+  instance_class          = var.db_instance_class
   name                    = "magento"
   username                = "admin"
-  password                = var.db-master-password
+  password                = var.db-password
   identifier              = "my-database"
   skip_final_snapshot     = "true"
   backup_retention_period = "7"

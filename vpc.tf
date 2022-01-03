@@ -1,9 +1,6 @@
 # Define VPC Variable
 
-variable "aws-vpc-cidr" {
-  type= string
-  default="10.0.0.0/16"
-}
+
 
 # Create VPC
 
