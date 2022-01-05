@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "bucket" {
+resource "aws_s3_bucket" "ziyoprojectbucket3" {
   bucket = var.bucket_name3
   acl    = "private"
 
@@ -39,8 +39,8 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
-resource "aws_s3_bucket" "versioning_bucket" {
-  bucket = var.bucket_name2
+resource "aws_s3_bucket" "ziyoprojectbucket24" {
+  bucket = var.bucket_name
   acl    = "private"
 
   versioning {
