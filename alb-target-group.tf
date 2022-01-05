@@ -48,3 +48,4 @@ resource "aws_lb_target_group" "my-back-end-tg" {
     Terraform = "True"
   }
 }
+

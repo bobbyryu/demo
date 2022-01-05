@@ -1,6 +1,6 @@
 # S3 Bucket Public Access Block
 resource "aws_s3_bucket" "cloud-avengers-bucket" {
-  bucket = var.bucket_name
+  bucket = "cloud-avengers-bucket"
 }
 
 resource "aws_s3_bucket_public_access_block" "cloud-avengers-bucket" {

@@ -42,9 +42,9 @@ resource "aws_autoscaling_group" "my_front_end" {
   name                 = "My FrontEnd ASG"
   launch_configuration = aws_launch_configuration.my_launch_config.name
   health_check_type    = "ELB"
-  min_size             = 6
-  max_size             = 6
-  desired_capacity     = 6
+  min_size             = 2
+  max_size             = 2
+  desired_capacity     = 2
 
   vpc_zone_identifier = [
     aws_subnet.my-private-1.id,
@@ -67,9 +67,9 @@ resource "aws_autoscaling_group" "my_back_end" {
   name                 = "My BackEnd ASG"
   launch_configuration = aws_launch_configuration.my_launch_config.name
   health_check_type    = "ELB"
-  min_size             = 5
-  max_size             = 5
-  desired_capacity     = 5
+  min_size             = 2
+  max_size             = 2
+  desired_capacity     = 2
 
   vpc_zone_identifier = [
     aws_subnet.my-private-1.id,
@@ -84,4 +84,9 @@ resource "aws_autoscaling_group" "my_back_end" {
     value               = "My BackEnd ASG"
     propagate_at_launch = true
   }
+}
+
+resource "aws_autoscaling_attachment" "group3_web_asg" {
+  alb_target_group_arn   = aws_lb_target_group.my-front-end-tg.arn
+  autoscaling_group_name = aws_autoscaling_group.my_front_end.id
 }
