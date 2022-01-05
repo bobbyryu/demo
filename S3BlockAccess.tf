@@ -1,10 +1,10 @@
 # S3 Bucket Public Access Block
-resource "aws_s3_bucket" "cloud-avengers-bucket" {
-  bucket = "cloud-avengers-bucket"
+resource "aws_s3_bucket" "ziyoprojectbucket2" {
+  bucket = var.bucket_name2
 }
 
-resource "aws_s3_bucket_public_access_block" "cloud-avengers-bucket" {
-  bucket = aws_s3_bucket.cloud-avengers-bucket.id
+resource "aws_s3_bucket_public_access_block" "ziyo-block" {
+  bucket = aws_s3_bucket.ziyoprojectbucket2.id
 
   block_public_acls   = true
   block_public_policy = true
