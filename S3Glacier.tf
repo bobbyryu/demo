@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "ziyoprojectbucket3" {
-  bucket = var.bucket_name3
+  bucket = "cloudavengerszt222222222"
   acl    = "private"
 
   lifecycle_rule {
@@ -14,8 +14,8 @@ resource "aws_s3_bucket" "ziyoprojectbucket3" {
     }
 
     #transition {
-     # days          = 90
-      #storage_class = "STANDARD_IA" # or "ONEZONE_IA"
+    # days          = 90
+    #storage_class = "STANDARD_IA" # or "ONEZONE_IA"
     #}
 
     transition {
@@ -40,7 +40,7 @@ resource "aws_s3_bucket" "ziyoprojectbucket3" {
 }
 
 resource "aws_s3_bucket" "ziyoprojectbucket24" {
-  bucket = var.bucket_name
+  bucket = "cloudavengerszt33333333"
   acl    = "private"
 
   versioning {
@@ -52,8 +52,8 @@ resource "aws_s3_bucket" "ziyoprojectbucket24" {
     enabled = true
 
     #noncurrent_version_transition {
-     # days          = 90
-      #storage_class = "STANDARD_IA"
+    # days          = 90
+    #storage_class = "STANDARD_IA"
     #}
 
     noncurrent_version_transition {

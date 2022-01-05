@@ -1,6 +1,6 @@
 #S3 bucket
 resource "aws_s3_bucket" "ziyoprojectbucket1" {
-  bucket = var.bucket_name
+  bucket = "cloudavengerszt1111111"
   acl    = "private"
 
   tags = {

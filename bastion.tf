@@ -5,7 +5,7 @@
 #   subnet_id         = var.cidrs.public1
 #   availability_zone = "us-west-1a"
 #   security_groups   = ["${aws_security_group.bastion_sg.id}"]
-  
+
 
 #   tags = {
 #     Name = "bastion host"

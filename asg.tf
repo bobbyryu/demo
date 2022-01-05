@@ -39,12 +39,15 @@ resource "aws_security_group" "my_asg_sg_1" {
 # Create My FrontEnd ASG # desired number of instances is 6
 
 resource "aws_autoscaling_group" "my_front_end" {
-  name                 = "My FrontEnd ASG"
-  launch_configuration = aws_launch_configuration.my_launch_config.name
-  health_check_type    = "ELB"
-  min_size             = 2
-  max_size             = 2
-  desired_capacity     = 2
+  name              = "My FrontEnd ASG"
+  launch_template {
+    id = aws_launch_template.gogreen.id
+    version = "$Latest" 
+  }
+  health_check_type = "ELB"
+  min_size          = 2
+  max_size          = 2
+  desired_capacity  = 2
 
   vpc_zone_identifier = [
     aws_subnet.my-private-1.id,
@@ -64,12 +67,15 @@ resource "aws_autoscaling_group" "my_front_end" {
 # Create My Backend ASG # desired number of instances is 5
 
 resource "aws_autoscaling_group" "my_back_end" {
-  name                 = "My BackEnd ASG"
-  launch_configuration = aws_launch_configuration.my_launch_config.name
-  health_check_type    = "ELB"
-  min_size             = 2
-  max_size             = 2
-  desired_capacity     = 2
+  name              = "My BackEnd ASG"
+    launch_template {
+    id = aws_launch_template.gogreen.id
+    version = "$Latest" 
+  }
+  health_check_type = "ELB"
+  min_size          = 2
+  max_size          = 2
+  desired_capacity  = 2
 
   vpc_zone_identifier = [
     aws_subnet.my-private-1.id,
@@ -86,7 +92,7 @@ resource "aws_autoscaling_group" "my_back_end" {
   }
 }
 
-resource "aws_autoscaling_attachment" "group3_web_asg" {
+resource "aws_autoscaling_attachment" "gogreen_web_asg" {
   alb_target_group_arn   = aws_lb_target_group.my-front-end-tg.arn
   autoscaling_group_name = aws_autoscaling_group.my_front_end.id
 }

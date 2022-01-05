@@ -11,7 +11,7 @@ resource "aws_lb_target_group" "my-front-end-tg" {
   }
   health_check {
     protocol            = "HTTP"
-    path                = "/healthy.html"
+    path                = "/"
     healthy_threshold   = 2
     unhealthy_threshold = 2
     timeout             = 5
