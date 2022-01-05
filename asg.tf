@@ -4,32 +4,32 @@ resource "aws_security_group" "my_asg_sg_1" {
   vpc_id = aws_vpc.my_vpc.id
   egress {
     from_port = 0
-    to_port = 0
-    protocol = "-1"
+    to_port   = 0
+    protocol  = "-1"
     cidr_blocks = [
       "0.0.0.0/0"
     ]
   }
- ingress {
+  ingress {
     from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    to_port   = 80
+    protocol  = "tcp"
     security_groups = [
       aws_security_group.my_alb_sg_1.id
     ]
   }
   #ingress {
-    #from_port   = 22
-    #to_port     = 22
-    #protocol    = "tcp"
-    #security_groups = [
-      #aws_security_group.my_bastion_sg.id ##if we want to add bastion host##
-    #]
+  #from_port   = 22
+  #to_port     = 22
+  #protocol    = "tcp"
+  #security_groups = [
+  #aws_security_group.my_bastion_sg.id ##if we want to add bastion host##
+  #]
   #}
   tags = {
-    Name        = "My ASG Security Group"
-    Terraform   = "true"
-  } 
+    Name      = "My ASG Security Group"
+    Terraform = "true"
+  }
 }
 
 # Create Launch Configuration
@@ -57,7 +57,7 @@ resource "aws_autoscaling_group" "my_front_end" {
   tag {
     key                 = "Name"
     value               = "My FrontEnd ASG"
-    propagate_at_launch = true  
+    propagate_at_launch = true
   }
 }
 
@@ -79,9 +79,9 @@ resource "aws_autoscaling_group" "my_back_end" {
   lifecycle {
     create_before_destroy = true
   }
- tag {
+  tag {
     key                 = "Name"
     value               = "My BackEnd ASG"
-    propagate_at_launch = true  
+    propagate_at_launch = true
   }
 }

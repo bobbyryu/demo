@@ -5,10 +5,10 @@
 # Create VPC
 
 resource "aws_vpc" "my_vpc" {
-  cidr_block = var.aws-vpc-cidr
+  cidr_block       = var.aws-vpc-cidr
   instance_tenancy = "default"
   tags = {
-    Name = "my_vpc"
+    Name      = "my_vpc"
     Terrafrom = "True"
   }
 }

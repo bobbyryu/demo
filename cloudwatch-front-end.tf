@@ -22,7 +22,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu-up-alarm" {
   }
   actions_enabled = true
   alarm_actions   = [aws_autoscaling_policy.front-end-policy.arn]
-  }
+}
 
 
 resource "aws_autoscaling_policy" "front-end-policy" {
@@ -49,7 +49,7 @@ resource "aws_cloudwatch_metric_alarm" "cpu-down-alarm" {
   }
   actions_enabled = true
   alarm_actions   = [aws_autoscaling_policy.front-end-policy.arn]
-    }
+}
 
 
 

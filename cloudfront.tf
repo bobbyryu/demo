@@ -1,7 +1,7 @@
-# CREATE CLOUDFRONT DISTRIBUTION
+#CREATE CLOUDFRONT DISTRIBUTION
 
 locals {
-  my_origin_id = "my-origin"
+my_origin_id = "my-origin"
 }
 resource "aws_cloudfront_distribution" "my_distribution" {
   origin {

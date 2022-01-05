@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket = "cloud-avengers-bucket"
+  bucket = var.bucket_name3
   acl    = "private"
 
   lifecycle_rule {
@@ -13,13 +13,13 @@ resource "aws_s3_bucket" "bucket" {
       autoclean = "true"
     }
 
-    transition {
-      days          = 90
-      storage_class = "STANDARD_IA" # or "ONEZONE_IA"
-    }
+    #transition {
+     # days          = 90
+      #storage_class = "STANDARD_IA" # or "ONEZONE_IA"
+    #}
 
     transition {
-      days          = 1825
+      days          = 90
       storage_class = "GLACIER"
     }
 
@@ -40,7 +40,7 @@ resource "aws_s3_bucket" "bucket" {
 }
 
 resource "aws_s3_bucket" "versioning_bucket" {
-  bucket = "my-versioning-bucket"
+  bucket = var.bucket_name2
   acl    = "private"
 
   versioning {
@@ -51,13 +51,13 @@ resource "aws_s3_bucket" "versioning_bucket" {
     prefix  = "config/"
     enabled = true
 
-    noncurrent_version_transition {
-      days          = 90
-      storage_class = "STANDARD_IA"
-    }
+    #noncurrent_version_transition {
+     # days          = 90
+      #storage_class = "STANDARD_IA"
+    #}
 
     noncurrent_version_transition {
-      days          = 1825
+      days          = 90
       storage_class = "GLACIER"
     }
 

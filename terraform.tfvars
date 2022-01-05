@@ -1,6 +1,6 @@
 
-  #use your key
-aws-vpc-cidr   = "10.0.0.0/16"
+#use your key
+aws-vpc-cidr = "10.0.0.0/16"
 
 cidrs = {
   public1  = "10.0.1.0/24"
@@ -17,6 +17,5 @@ db-password       = "12345678"
 db_bak_retention  = "4"
 db_port           = 3306
 
-image_id             = "ami-03af6a70ccd8cb578"
-instance_type        = "t2.micro"
-bucket_name          = "cloud-avengers-bucket"
+image_id      = "ami-03af6a70ccd8cb578"
+instance_type = "t2.micro"

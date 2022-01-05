@@ -12,22 +12,29 @@ variable "cidrs" {
 variable "db_instance_class" {
 }
 
-variable "db-password"{
+variable "db-password" {
 
 }
 
-variable "alarms_email"{
+variable "alarms_email" {
 
 }
 
-variable "image_id"{
+variable "image_id" {
 
 }
 
-variable "instance_type"{
+variable "instance_type" {
 
 }
 
 variable "bucket_name" {
-    
+
+}
+
+variable "bucket_name2" {
+
+}
+variable "bucket_name3" {
+
 }

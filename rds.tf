@@ -1,25 +1,25 @@
 # CREATE RDS SECURITY GROUP
 
 resource "aws_security_group" "my_db_sg" {
-  name = "RDS Security Group"
+  name   = "RDS Security Group"
   vpc_id = aws_vpc.my_vpc.id
   egress {
-  from_port   = 0
-  to_port     = 0
-  protocol    = "-1"
-  cidr_blocks = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    from_port   = 3306
-    to_port     = 3306
-    protocol    = "tcp"
+    from_port = 3306
+    to_port   = 3306
+    protocol  = "tcp"
     security_groups = [
       aws_security_group.my_asg_sg_1.id
     ]
   }
   tags = {
-    Name        = "RDS Security Group"
-    Terraform   = "true"
+    Name      = "RDS Security Group"
+    Terraform = "true"
   }
 }
 
@@ -30,11 +30,11 @@ resource "aws_db_subnet_group" "my-db-subnet" {
   subnet_ids = [
     aws_subnet.my-private-1.id,
     aws_subnet.my-private-2.id
-    ]
+  ]
 
   tags = {
-    Name        = "RDS DB Subnet Group"
-    Terraform   = "true"
+    Name      = "RDS DB Subnet Group"
+    Terraform = "true"
   }
 }
 
@@ -58,8 +58,8 @@ resource "aws_db_instance" "my-db" {
   storage_encrypted       = "false"
   db_subnet_group_name    = aws_db_subnet_group.my-db-subnet.name
   vpc_security_group_ids  = [aws_security_group.my_db_sg.id]
-   tags = {
-    Name        = "RDS Database"
-    Terraform   = "true"
+  tags = {
+    Name      = "RDS Database"
+    Terraform = "true"
   }
 }
