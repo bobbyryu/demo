@@ -1,5 +1,5 @@
 #S3 bucket
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "ziyoprojectbucket1" {
   bucket = var.bucket_name
   acl    = "private"
 
