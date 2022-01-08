@@ -48,7 +48,7 @@ resource "aws_db_instance" "my-db" {
   engine_version          = "5.7"
   multi_az                = "true"
   instance_class          = var.db_instance_class
-  name                    = "magento"
+  name                    = "cloudavengers"
   username                = "admin"
   password                = var.db-password
   identifier              = "my-database"

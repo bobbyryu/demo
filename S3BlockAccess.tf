@@ -1,6 +1,6 @@
 # S3 Bucket Public Access Block
 resource "aws_s3_bucket" "ziyoprojectbucket2" {
-  bucket = "cloudavengerszt4444444444"
+  bucket = "cloudavengers2dssfvdsfdeee"
 }
 
 resource "aws_s3_bucket_public_access_block" "ziyo-block" {

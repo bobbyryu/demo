@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "ziyoprojectbucket3" {
-  bucket = "cloudavengerszt222222222"
+  bucket = "cloudavengedfgdfgdfgrrrrr"
   acl    = "private"
 
   lifecycle_rule {
@@ -40,7 +40,7 @@ resource "aws_s3_bucket" "ziyoprojectbucket3" {
 }
 
 resource "aws_s3_bucket" "ziyoprojectbucket24" {
-  bucket = "cloudavengerszt33333333"
+  bucket = "cloudavengersdsfedfg45rtrr"
   acl    = "private"
 
   versioning {
